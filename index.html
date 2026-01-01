@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FunZone - แพลตฟอร์มความบันเทิงออนไลน์ เกมสนุก กิจกรรมมากมาย สะสมแต้มแลกรางวัล">
+    <title>FunZone - เกมสนุก สะสมแต้ม</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- ============================================
+         MONETAG SETUP - HEAD SCRIPTS
+         ============================================
+         วางโค้ด Anti-AdBlock ของ Monetag ที่นี่
+         ไปที่: Monetag Dashboard > Anti-Adblock > Get Code
+         ตัวอย่าง:
+         <script>(function(d,z,s){s.src='https://example.monetag.com/'+z;d.head.appendChild(s);})(document,'YOUR_ZONE_ID',document.createElement('script'));</script>
+    -->
+</head>
+
+<body>
+    <!-- ============================================
+         MONETAG: IN-PAGE PUSH NOTIFICATION
+         ============================================
+         วาง In-Page Push code ที่นี่ (ถ้าต้องการ)
+         ไปที่: Monetag Dashboard > In-Page Push > Create Zone > Get Code
+    -->
+
+    <!-- Header Banner Ad - MONETAG BANNER 728x90 -->
+    <div class="banner-ad banner-header" id="headerBanner">
+        <!-- 
+        ============================================
+        MONETAG BANNER AD - 728x90 (Header)
+        ============================================
+        แทนที่ placeholder ด้วยโค้ด Banner ของ Monetag:
+        1. ไปที่ Monetag Dashboard
+        2. เลือก "Banner" > "Create Zone"
+        3. เลือกขนาด 728x90
+        4. Copy โค้ดมาวางแทน div.ad-placeholder
+        
+        ตัวอย่างโค้ด Monetag:
+        <script type="text/javascript">
+            atOptions = {
+                'key' : 'YOUR_KEY_HERE',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+            };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/YOUR_KEY_HERE/invoke.js"></script>
+        -->
+        <div class="ad-placeholder">
+            <span class="ad-label">📢 Monetag Banner</span>
+            <span class="ad-text">728x90 - ใส่โค้ด Banner จาก Monetag ที่นี่</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🎮</span>
+                <h1>FunZone</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">หน้าหลัก</a>
+                <a href="about.html">เกี่ยวกับเรา</a>
+            </nav>
+            <div class="user-stats">
+                <div class="coin-display">
+                    <span class="coin-icon">⭐</span>
+                    <span class="coin-amount" id="coinAmount">0</span>
+                    <span class="coin-label">Points</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container main-grid">
+            <!-- Left Sidebar Banner - MONETAG 300x250 -->
+            <aside class="sidebar sidebar-left">
+                <div class="banner-ad banner-sidebar" id="leftSidebarBanner">
+                    <!-- 
+                    MONETAG BANNER AD - 300x250 (Left Sidebar)
+                    ใส่โค้ด Banner 300x250 จาก Monetag ที่นี่
+                    -->
+                    <div class="ad-placeholder vertical">
+                        <span class="ad-label">📢 Monetag</span>
+                        <span class="ad-text">300x250</span>
+                        <span class="ad-subtext">ใส่โค้ดที่นี่</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Center Content -->
+            <section class="content-center">
+                <!-- Hero Section -->
+                <div class="hero-section">
+                    <h2 class="hero-title">
+                        <span class="gradient-text">เล่นเกม</span> สะสมแต้ม!
+                    </h2>
+                    <p class="hero-subtitle">ทำกิจกรรมสนุกๆ สะสม Points แลกของรางวัลสุดพิเศษ พร้อมโบนัสทุกวัน!</p>
+                </div>
+
+                <!-- Ad Player Section -->
+                <div class="ad-player-section">
+                    <div class="ad-player-card">
+                        <div class="ad-player" id="adPlayer">
+                            <div class="ad-video-placeholder" id="adVideoPlaceholder">
+                                <div class="play-icon">▶️</div>
+                                <p>คลิกเพื่อดูโฆษณา</p>
+                            </div>
+                            <div class="ad-playing hidden" id="adPlaying">
+                                <div class="ad-content">
+                                    <!-- 
+                                    ============================================
+                                    MONETAG: REWARDED VIDEO / INTERSTITIAL
+                                    ============================================
+                                    คุณสามารถใช้ Interstitial Ads ของ Monetag ตรงนี้แทนได้
+                                    โดยเรียก show_monetag_interstitial() ใน app.js
+                                    -->
+                                    <div class="fake-ad-visual">
+                                        <div class="ad-animation"></div>
+                                        <span class="ad-brand">🎮 GamePro X</span>
+                                        <p class="ad-slogan">เกมใหม่มาแรง! ดาวน์โหลดฟรีวันนี้</p>
+                                    </div>
+                                </div>
+                                <div class="ad-timer">
+                                    <div class="timer-bar" id="timerBar"></div>
+                                </div>
+                                <div class="timer-text">
+                                    กรุณารอ <span id="countdown">10</span> วินาที
+                                </div>
+                            </div>
+                            <div class="ad-completed hidden" id="adCompleted">
+                                <div class="reward-animation">
+                                    <span class="reward-icon">🎉</span>
+                                    <h3>ยินดีด้วย!</h3>
+                                    <p>คุณได้รับ <span class="reward-coins">+10</span> Coins</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="watch-ad-btn" id="watchAdBtn">
+                            <span class="btn-icon">🎯</span>
+                            <span class="btn-text">เล่นมินิเกม รับ 10 Points</span>
+                        </button>
+
+                        <div class="ads-watched-info">
+                            <span>เล่นแล้ววันนี้: <strong id="adsWatchedToday">0</strong> ครั้ง</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Monetag Native Banner (Between Content) -->
+                <div class="native-ad-container" id="nativeAdContainer">
+                    <!-- 
+                    ============================================
+                    MONETAG NATIVE BANNER (Optional)
+                    ============================================
+                    Native Ads ดูเป็นธรรมชาติและมี CTR สูง
+                    ไปที่: Monetag > Native Banner > Create Zone
+                    -->
+                    <div class="banner-ad" style="height: 100px; margin: 20px 0;">
+                        <div class="ad-placeholder">
+                            <span class="ad-label">📢 Native Ad</span>
+                            <span class="ad-text">Monetag Native Banner - CTR สูง!</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">⭐</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalEarned">0</span>
+                            <span class="stat-label">Points ที่สะสม</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎮</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="totalAdsWatched">0</span>
+                            <span class="stat-label">กิจกรรมที่เล่น</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🔥</div>
+                        <div class="stat-info">
+                            <span class="stat-value" id="streakDays">1</span>
+                            <span class="stat-label">วันติดต่อกัน</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How it Works -->
+                <div class="how-it-works">
+                    <h3 class="section-title">วิธีการรับรางวัล</h3>
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-icon">👆</div>
+                            <h4>กดดูโฆษณา</h4>
+                            <p>คลิกปุ่มเพื่อเริ่มดูโฆษณา</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-icon">⏱️</div>
+                            <h4>รอให้จบ</h4>
+                            <p>ดูโฆษณาให้ครบเวลา</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-icon">🎁</div>
+                            <h4>รับรางวัล</h4>
+                            <p>ได้รับ Coins อัตโนมัติ</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rewards Section -->
+                <div class="rewards-section">
+                    <h3 class="section-title">แลกของรางวัล</h3>
+                    <div class="rewards-grid">
+                        <div class="reward-item">
+                            <div class="reward-image">🎧</div>
+                            <h4>หูฟังไร้สาย</h4>
+                            <div class="reward-price">
+                                <span class="coin-icon-small">🪙</span>
+                                <span>500 Coins</span>
+                            </div>
+                            <button class="redeem-btn" data-cost="500">แลกรางวัล</button>
+                        </div>
+                        <div class="reward-item">
+                            <div class="reward-image">📱</div>
+                            <h4>บัตรเติมเงิน 100฿</h4>
+                            <div class="reward-price">
+                                <span class="coin-icon-small">🪙</span>
+                                <span>200 Coins</span>
+                            </div>
+                            <button class="redeem-btn" data-cost="200">แลกรางวัล</button>
+                        </div>
+                        <div class="reward-item">
+                            <div class="reward-image">🎮</div>
+                            <h4>Gift Card Gaming</h4>
+                            <div class="reward-price">
+                                <span class="coin-icon-small">🪙</span>
+                                <span>300 Coins</span>
+                            </div>
+                            <button class="redeem-btn" data-cost="300">แลกรางวัล</button>
+                        </div>
+                        <div class="reward-item">
+                            <div class="reward-image">☕</div>
+                            <h4>บัตรร้านกาแฟ</h4>
+                            <div class="reward-price">
+                                <span class="coin-icon-small">🪙</span>
+                                <span>100 Coins</span>
+                            </div>
+                            <button class="redeem-btn" data-cost="100">แลกรางวัล</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Right Sidebar Banner - MONETAG 300x250 -->
+            <aside class="sidebar sidebar-right">
+                <div class="banner-ad banner-sidebar" id="rightSidebarBanner">
+                    <!-- MONETAG BANNER AD - 300x250 (Right Sidebar 1) -->
+                    <div class="ad-placeholder vertical">
+                        <span class="ad-label">📢 Monetag</span>
+                        <span class="ad-text">300x250</span>
+                        <span class="ad-subtext">ใส่โค้ดที่นี่</span>
+                    </div>
+                </div>
+
+                <div class="banner-ad banner-sidebar" id="rightSidebarBanner2" style="margin-top: 20px;">
+                    <!-- MONETAG BANNER AD - 300x250 (Right Sidebar 2) -->
+                    <div class="ad-placeholder vertical">
+                        <span class="ad-label">📢 Monetag</span>
+                        <span class="ad-text">300x250</span>
+                        <span class="ad-subtext">ใส่โค้ดที่นี่</span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer Banner Ad - MONETAG 728x90 -->
+    <div class="banner-ad banner-footer" id="footerBanner">
+        <!-- MONETAG BANNER AD - 728x90 (Footer) -->
+        <div class="ad-placeholder">
+            <span class="ad-label">📢 Monetag Banner</span>
+            <span class="ad-text">728x90 - ใส่โค้ด Banner จาก Monetag ที่นี่</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">🎮 FunZone</span>
+                    <p>แพลตฟอร์มความบันเทิงออนไลน์</p>
+                </div>
+                <div class="footer-links">
+                    <a href="about.html">เกี่ยวกับเรา</a>
+                    <a href="privacy-policy.html">นโยบายความเป็นส่วนตัว</a>
+                    <a href="terms.html">ข้อกำหนดการใช้งาน</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FunZone Entertainment. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Notification Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- ============================================
+         MONETAG SCRIPTS - PLACE BEFORE </body>
+         ============================================
+    -->
+
+    <!-- 
+    MONETAG: POPUNDER / ONCLICK ADS
+    ================================
+    โฆษณา Popunder จะสร้างรายได้เมื่อผู้ใช้คลิกที่ใดก็ได้ในเว็บ
+    ไปที่: Monetag > Onclick (Popunder) > Create Zone > Get Code
+    
+    ตัวอย่างโค้ด:
+    <script type="text/javascript" src="//pl.example.com/YOUR_ZONE_ID.js"></script>
+    -->
+
+    <!-- 
+    MONETAG: INTERSTITIAL ADS
+    ==========================
+    Interstitial = โฆษณาเต็มหน้าจอ (แนะนำสำหรับ Rewarded Ads)
+    ไปที่: Monetag > Interstitial > Create Zone
+    
+    ตัวอย่าง Integration:
+    <script type="text/javascript" src="//pl.example.com/YOUR_INTERSTITIAL_ID.js"></script>
+    
+    เรียกแสดงโฆษณาด้วย: show_YOUR_INTERSTITIAL_ID();
+    -->
+
+    <!-- 
+    MONETAG: VIGNETTE (OPTIONAL)
+    =============================
+    Vignette = โฆษณาแบบ overlay เมื่อเปลี่ยนหน้า
+    ดีสำหรับเว็บหลายหน้า
+    -->
+
+    <!-- Monetag Auto-Loader -->
+    <script src="monetag-keys.js"></script>
+    <script src="monetag-config.js"></script>
+    <script src="app.js"></script>
+
+    <!-- 
+    MONETAG: SOCIAL BAR / PUSH NOTIFICATION (OPTIONAL)
+    ==================================================
+    Social Bar = แถบลอยอยู่ด้านล่างหน้าจอ สร้างรายได้ดี
+    ไปที่: Monetag > Social Bar > Create Zone
+    
+    Push Subscription = ขอ permission push notification
+    ได้รายได้แม้ผู้ใช้ไม่อยู่ในเว็บ!
+    -->
+</body>
+
+</html>
